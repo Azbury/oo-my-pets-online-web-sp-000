@@ -41,10 +41,13 @@ class Owner
   end
 
   def walk_dogs
-    Dog.all.each {|d| d.mood = "happy"}
+    Dog.all.each {|d| d.mood = "happy" if d.owner == self}
   end
 
   def feed_cats
-    Cat.all.each {|c| c.mood = "happy"}
+    Cat.all.each {|c| c.mood = "happy" if c.owner == self}
   end
+
+  def sell_pets
+    Cat.all
 end
