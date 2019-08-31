@@ -50,4 +50,5 @@ class Owner
 
   def sell_pets
     Cat.all
+  end
 end
