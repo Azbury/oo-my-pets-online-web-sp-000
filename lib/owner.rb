@@ -64,6 +64,10 @@ class Owner
   end
 
   def list_pets
-
+    dog_count = 0
+    cat_count = 0
+    Dog.all.each {|d| dog_count += 1 if d.owner == self}
+    Cat.all.each {|c| cat_count += 1 if c.owner == self}
+    "I have #{dog_count} dog(s), and #{cat_count} cat(s)."
   end
 end
